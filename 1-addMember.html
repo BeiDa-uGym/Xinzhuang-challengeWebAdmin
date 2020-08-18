@@ -154,18 +154,17 @@
   <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
-      apiKey: "AIzaSyAhr69v1SCFW5mwzfv-qfMA6xL0IhKHNrc",
-      authDomain: "webchallenge-c16eb.firebaseapp.com",
-      databaseURL: "https://webchallenge-c16eb.firebaseio.com",
-      projectId: "webchallenge-c16eb",
-      storageBucket: "webchallenge-c16eb.appspot.com",
-      messagingSenderId: "372130663533",
-      appId: "1:372130663533:web:d73219272c0b4faf7f8364",
-      measurementId: "G-LZ3DN86LX1"
+      apiKey: "AIzaSyDOpoAW4W6atW1FM1n7HdrhGQoWHdHdTFY",
+      authDomain: "xinzhuang-sports-center.firebaseapp.com",
+      databaseURL: "https://xinzhuang-sports-center.firebaseio.com",
+      projectId: "xinzhuang-sports-center",
+      storageBucket: "xinzhuang-sports-center.appspot.com",
+      messagingSenderId: "690418879659",
+      appId: "1:690418879659:web:b2817ef26a6ec7fa003bee"
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
+//    firebase.analytics();
 
     var database = firebase.database();
 
@@ -207,7 +206,7 @@
     var readTimes = 0;
     var toRead = 3;
 
-    firebase.database().ref('users/林口運動中心/挑戰賽').once('value').then(function(snapshot) {
+    firebase.database().ref('users/新莊運動中心/挑戰賽').once('value').then(function(snapshot) {
       console.log("data read done");
       readTimes++;
       var result = snapshot.val();
@@ -220,7 +219,7 @@
     });
 
     $.loading.start('Loading data');
-    firebase.database().ref('users/林口運動中心/挑戰賽管理').once('value').then(function(snapshot) {
+    firebase.database().ref('users/新莊運動中心/挑戰賽管理').once('value').then(function(snapshot) {
       console.log("class read done");
       readTimes++;
       var result = snapshot.val();
@@ -229,7 +228,7 @@
     });
 
     // Read memberData from the database
-    firebase.database().ref('users/林口運動中心/客戶管理').once('value').then(function(snapshot) {
+    firebase.database().ref('users/新莊運動中心/客戶管理').once('value').then(function(snapshot) {
       console.log("member read done");
       readTimes++;
       var result = snapshot.val();
@@ -452,7 +451,7 @@
         });
 
         // 將更新新客戶寫入資料庫
-        database.ref('users/林口運動中心/客戶管理').set({
+        database.ref('users/新莊運動中心/客戶管理').set({
           會員資料: JSON.stringify(memberData),
         }, function(error) {
           if (error) {
@@ -543,7 +542,7 @@
 //        });
         
         //更新 couponMember to 資料庫                   
-//          database.ref('users/林口運動中心/挑戰賽管理').set({
+//          database.ref('users/新莊運動中心/挑戰賽管理').set({
 //            挑戰賽會員: JSON.stringify(couponMember),
 //          }, function(error){
 //                if (error) {
@@ -597,7 +596,7 @@
         if(alreadyInUse) {
           console.log("aaa");
           closeMyCoupons();
-          database.ref('users/林口運動中心/挑戰賽管理').set({
+          database.ref('users/新莊運動中心/挑戰賽管理').set({
             挑戰賽會員: JSON.stringify(couponMember),
           }, function(error){
                 if (error) {
@@ -732,7 +731,7 @@
         
 
         // Write couponMember to database
-        database.ref('users/林口運動中心/挑戰賽管理').set({
+        database.ref('users/新莊運動中心/挑戰賽管理').set({
           挑戰賽會員: JSON.stringify(couponMember),
         }, function(error){
               if (error) {
@@ -776,7 +775,7 @@
 
     function readMemberfromDB() {
       $.loading.start('Loading data');
-      firebase.database().ref('users/林口運動中心/客戶管理').once('value').then(function(snapshot) {
+      firebase.database().ref('users/新莊運動中心/客戶管理').once('value').then(function(snapshot) {
         console.log("member read done");
         var result = snapshot.val();
         memberData = JSON.parse(result.會員資料);
@@ -831,7 +830,7 @@
 
       // 將新客戶寫入資料庫
 // 先 Remark，避免誤寫入資料
-//      database.ref('users/林口運動中心/客戶管理').set({
+//      database.ref('users/新莊運動中心/客戶管理').set({
 //        會員資料: JSON.stringify(memberData),
 //      }, function(error) {
 //        if (error) {

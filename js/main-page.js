@@ -80,7 +80,7 @@ function initMainPage() {
     couponNum = (tmp4 > tmp2)? tmp4:tmp2;
 
     // 更新 database
-    database.ref('users/林口運動中心/挑戰賽').set({
+    database.ref('users/新莊運動中心/挑戰賽').set({
       現在挑戰賽: JSON.stringify(couponData),
       過去挑戰賽: JSON.stringify(couponHistory),
     }, function (error) {
@@ -229,7 +229,7 @@ function initMainPage() {
     couponNum = (tmp4 > tmp2)? tmp4:tmp2;
 
     // 更新 database
-    database.ref('users/林口運動中心/挑戰賽').set({
+    database.ref('users/新莊運動中心/挑戰賽').set({
       現在挑戰賽: JSON.stringify(couponData),
       過去挑戰賽: JSON.stringify(couponHistory),
     }, function (error) {
@@ -243,7 +243,7 @@ function initMainPage() {
     couponMember = couponMember.filter(function (value, index, arr) {
       return value[0] != data[0];
     });
-    database.ref('users/林口運動中心/挑戰賽管理').set({
+    database.ref('users/新莊運動中心/挑戰賽管理').set({
       挑戰賽會員: JSON.stringify(couponMember),
     }, function (error) {
       if (error) {
@@ -400,7 +400,7 @@ function initMainPage() {
     table.draw();    
     
     // Write couponMember to database
-    database.ref('users/林口運動中心/挑戰賽管理').set({
+    database.ref('users/新莊運動中心/挑戰賽管理').set({
       挑戰賽會員: JSON.stringify(couponMember),
     }, function (error) {
       if (error) {
@@ -481,7 +481,7 @@ function initMainPage() {
     table.draw();  
     
     // Write couponMember to database
-    database.ref('users/林口運動中心/挑戰賽管理').set({
+    database.ref('users/新莊運動中心/挑戰賽管理').set({
       挑戰賽會員: JSON.stringify(couponMember),
     }, function (error) {
       if (error) {
@@ -547,7 +547,7 @@ function initMainPage() {
 //    table.draw();    
 //    
 //    // Write couponMember to database
-//    database.ref('users/林口運動中心/挑戰賽管理').set({
+//    database.ref('users/新莊運動中心/挑戰賽管理').set({
 //      挑戰賽會員: JSON.stringify(couponMember),
 //    }, function (error) {
 //      if (error) {

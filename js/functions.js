@@ -57,7 +57,7 @@ function couponConfirm() {
   couponMember.push(["T" + zeroFill(couponNum, 4)]); 
 
   // 挑戰賽寫入資料庫
-  database.ref('users/林口運動中心/挑戰賽').set({
+  database.ref('users/新莊運動中心/挑戰賽').set({
     現在挑戰賽: JSON.stringify(couponData),
     過去挑戰賽: JSON.stringify(couponHistory),
   }, function (error) {
@@ -69,7 +69,7 @@ function couponConfirm() {
   });
 
 
-  database.ref('users/林口運動中心/挑戰賽管理').set({
+  database.ref('users/新莊運動中心/挑戰賽管理').set({
     挑戰賽會員: JSON.stringify(couponMember),
   }, function (error) {
     if (error) {
@@ -213,7 +213,7 @@ function couponUpdate() {
     }
     
     // 挑戰賽寫入資料庫
-    database.ref('users/林口運動中心/挑戰賽').set({
+    database.ref('users/新莊運動中心/挑戰賽').set({
       現在挑戰賽: JSON.stringify(couponData),
       過去挑戰賽: JSON.stringify(couponHistory),
     }, function (error) {
@@ -392,7 +392,7 @@ function addMemberInfo() {
 
 
   // 客戶寫入資料庫
-  database.ref('users/林口運動中心/客戶管理').set({
+  database.ref('users/新莊運動中心/客戶管理').set({
     會員資料: JSON.stringify(memberData),
   }, function (error) {
     if (error) {

@@ -53,7 +53,7 @@
     <button class="btn-blue" id="logToggle" onclick="logInAndOut()" style="float: right; margin-right: 10px; margin-left: 0px"><i class="fa fa-sign-in"></i>&nbsp 登入</button>
     <button id="loginStatus" class="btn-blue" style="float: right; background-color: white; color: gray">請登入來寫入資料庫</button>
 
-<!--    <h1 id="titleHeader">林口運動中心 - 挑戰賽管理</h1>-->
+<!--    <h1 id="titleHeader">新莊運動中心 - 挑戰賽管理</h1>-->
     <h1 id="titleHeader">挑戰賽管理</h1> 
   </div>
   <hr>
@@ -262,7 +262,7 @@
     var inaddCoupon = false;
     var version = " V1.1";
 
-//    $("#titleHeader").text("林口運動中心 - 挑戰賽管理"+version);
+//    $("#titleHeader").text("新莊運動中心 - 挑戰賽管理"+version);
     $("#titleHeader").text("挑戰賽管理"+version);    
 
 
@@ -310,7 +310,7 @@
       function myFunctionR() {
         console.log("Read Database");
 
-        var aaa = firebase.database().ref('users/林口運動中心/挑戰賽/').once('value').then(function(snapshot) {
+        var aaa = firebase.database().ref('users/新莊運動中心/挑戰賽/').once('value').then(function(snapshot) {
           console.log("done");
           var bbb = snapshot.val();
           console.log(bbb);
@@ -339,7 +339,7 @@
           ["T0001", "三個月跑步機路程挑戰賽", "2019-10-01", "2019-12-31", "獎品:乳清一瓶", "測試使用"],
         ];
         
-        database.ref('users/林口運動中心/挑戰賽').set({
+        database.ref('users/新莊運動中心/挑戰賽').set({
           現在挑戰賽: JSON.stringify(couponData),
           過去挑戰賽: JSON.stringify(couponHistory),          
         });
@@ -350,7 +350,7 @@
            ["T0003", ["小白", "2020-01-06 已參加", "未繳費", "U002", "09XXXXX222"], ["小華", "2020-01-11 已參加", "未繳費", "U003", "09XXXXX333"]], 
         ];          
         
-        database.ref('users/林口運動中心/挑戰賽管理').set({
+        database.ref('users/新莊運動中心/挑戰賽管理').set({
           挑戰賽會員: JSON.stringify(couponMember),
         });
 

@@ -156,14 +156,13 @@
   <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
-      apiKey: "AIzaSyAhr69v1SCFW5mwzfv-qfMA6xL0IhKHNrc",
-      authDomain: "webchallenge-c16eb.firebaseapp.com",
-      databaseURL: "https://webchallenge-c16eb.firebaseio.com",
-      projectId: "webchallenge-c16eb",
-      storageBucket: "webchallenge-c16eb.appspot.com",
-      messagingSenderId: "372130663533",
-      appId: "1:372130663533:web:d73219272c0b4faf7f8364",
-      measurementId: "G-LZ3DN86LX1"
+      apiKey: "AIzaSyDOpoAW4W6atW1FM1n7HdrhGQoWHdHdTFY",
+      authDomain: "xinzhuang-sports-center.firebaseapp.com",
+      databaseURL: "https://xinzhuang-sports-center.firebaseio.com",
+      projectId: "xinzhuang-sports-center",
+      storageBucket: "xinzhuang-sports-center.appspot.com",
+      messagingSenderId: "690418879659",
+      appId: "1:690418879659:web:b2817ef26a6ec7fa003bee"
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
@@ -226,7 +225,7 @@
 
       $("#drawDiv").hide();  
       
-      firebase.database().ref('users/林口運動中心/挑戰賽').once('value').then(function(snapshot) {
+      firebase.database().ref('users/新莊運動中心/挑戰賽').once('value').then(function(snapshot) {
         console.log("data read done");
         readTimes++;
         var result = snapshot.val();
@@ -250,7 +249,7 @@
       });
 
       $.loading.start('Loading data');
-      firebase.database().ref('users/林口運動中心/挑戰賽管理').once('value').then(function(snapshot) {
+      firebase.database().ref('users/新莊運動中心/挑戰賽管理').once('value').then(function(snapshot) {
         console.log("class read done");
         readTimes++;
         var result = snapshot.val();
@@ -259,7 +258,7 @@
       });
 
       // Read memberData from the database
-      firebase.database().ref('users/林口運動中心/客戶管理').once('value').then(function(snapshot) {
+      firebase.database().ref('users/新莊運動中心/客戶管理').once('value').then(function(snapshot) {
         console.log("member read done");
         readTimes++;
         var result = snapshot.val();
@@ -412,7 +411,7 @@
         });
 
         // 將更新新客戶寫入資料庫
-        database.ref('users/林口運動中心/客戶管理').set({
+        database.ref('users/新莊運動中心/客戶管理').set({
           會員資料: JSON.stringify(memberData),
         }, function(error) {
           if (error) {
@@ -570,7 +569,7 @@
           }
 
           paramToSend = "?API=50&UserId="+userLineIdToGetData[i]
-                       +"&SiteId="+"LINKOU" // change this for other site
+                       +"&SiteId="+"XINZHUANG" // change this for other site
                        +"&ExerciseId=" + exerciseIdCode
                        +"&DataType=" + dataTypeCode
                        +"&DateStart=" + modifyDate($("#couponDateStartDraw").val(), -1)
@@ -580,7 +579,8 @@
 
           // 必須用同步，不然 Heroku 無法接受同時多個 request
 
-          request.open('GET', 'https://api-linko-sports-center.herokuapp.com/'+paramToSend, false);  
+          //request.open('GET', 'https://api-linko-sports-center.herokuapp.com/'+paramToSend, false);  
+          request.open('GET', 'https://xinzhuang-api-for-firebase.herokuapp.com/'+paramToSend, false);  
 
           request.send()
 
